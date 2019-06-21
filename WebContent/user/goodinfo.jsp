@@ -36,10 +36,10 @@
 					<li id="goodsNumber">商品编号：P20140809181120781</li>
 					<li id="goodIntrouction">商品简介：商品毛重：340.00g商品产地：中国大陆网络：联通3G（WCDMA），移动2G/联通2G（GSM）系统：安卓（Android）
 					</li>
-					<li>价 格：<strong id="oldMoney">￥2426</strong>
+					<li>价 格：<strong id="oldMoney">12332</strong>
 					</li>
 					<li></li>
-					<li>商城价格：<b class="red5" id="money">1588</b>
+					<li>商城价格：<b class="red5" id="money">14235</b>
 					</li>
 					<li class="borli">
 						<p>
@@ -172,7 +172,7 @@
 	<script type="text/javascript">
 		var idTag = window.location.search;
 		var id = idTag.substring(idTag.indexOf("=") + 1, idTag.length);
-		ajax("get", "http://localhost:8080/Shopping/getGoodsInfo?id=" + id, null,
+		ajax("post", "http://localhost:8080/demo2/GoodServlet?id=" + id, null,
 				function(result) {
 					// succeed
 					initData(result);
@@ -192,7 +192,7 @@
 			document.getElementById("oldMoney").innerHTML = "￥" + data.oldMoney;
 			document.getElementById("money").innerHTML = data.money;
 			document.getElementById("sellNumber").innerHTML = data.sellNumber;
-			document.getElementById("img").src = data.image;
+			document.getElementById("img").src = data.images;
 		}
 	</script>
 
